@@ -91,3 +91,174 @@ a {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+/*portfolio*/
+
+.portfolio__container {
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding-top: 63px;
+
+  background-color: #2d303a;
+}
+
+.portfolio__container::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 1020px;
+  height: 6px;
+
+  background-color: #323746;
+}
+
+.portfolio__heading {
+  font-size: 30px;
+  font-weight: 900;
+
+  margin-bottom: 20px;
+}
+
+.portfolio__paragraph {
+  margin-bottom: 5px;
+}
+
+.portfolio__radio-list,
+.portfolio__images-list {
+  display: flex;
+
+  list-style: none;
+}
+
+.portfolio__radio-list {
+  margin-bottom: 15px;
+}
+
+.portfolio__radio-item + .portfolio__radio-item {
+  margin-left: 10px;
+}
+
+.portfolio__radio-label {
+  font-size: 12px;
+
+  padding: 3px 7px;
+
+  border-radius: 5px;
+  border: 1px solid #767e9e;
+
+  cursor: pointer;
+}
+
+.portfolio__radio-input:checked + .portfolio__radio-label {
+  color: #dedede;
+
+  border-color: #dedede;
+}
+
+.portfolio__images-list { 
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  max-height: 603px;
+
+  margin-bottom: 71px;
+
+  overflow: hidden;
+}
+
+.portfolio__images-item {
+  margin-bottom: 20px;
+}
+
+/*about*/
+
+.about__container {
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding-top: 62px;
+
+  background-color: #f2f2f2;
+}
+
+.about__container::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 1020px;
+  height: 6px;
+
+  background-color: #ffffff;
+}
+
+.about__heading {
+  font-size: 30px;
+
+  font-weight: 900;
+
+  margin-bottom: 20px;
+}
+
+.about__paragraph {
+  text-align: justify;
+
+  margin-bottom: 46px;
+}
+
+.about__list {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  list-style: none;
+}
+
+/*card*/
+
+.card {
+  width: 300px;
+
+  list-style: none;
+}
+
+.card__image {
+  margin-bottom: 10px;
+}
+
+.card__heading {
+  font-size: 18px;
+  font-weight: 900;
+
+  margin-bottom: 5px;
+}
+
+.card__paragraph {
+  font-size: 12px;
+  line-height: 21px;
+  letter-spacing: 0.07px;
+  text-align: justify;
+
+  margin-bottom: 23px;
+}
+
+.card__list {
+  display: flex;
+
+  list-style: none;
+
+  margin-bottom: 74px;
+}
+
+.card__item + .card__item {
+  margin-left: 8px;
+}
