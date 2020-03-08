@@ -485,6 +485,10 @@ a {
   font-size: 18px;
   font-weight: 900;
 
+  overflow: hidden;
+
+  max-height: 30px;
+
   margin-bottom: 5px;
 }
 
