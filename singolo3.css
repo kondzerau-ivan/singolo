@@ -103,20 +103,41 @@ a {
   background-color: #f06c64;
 }
 
+.contact__container::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 1020px;
+  height: 6px;
+
+  background-color: #ea676b;
+}
+
 .contact__heading {
   font-size: 30px;
   font-weight: 900;
+
+  margin-top: 62px;
 }
 
 .contact__paragraph {
   font-size: 18px;
   font-weight: 300;
+  text-align: justify;
+
+  margin-top: 20px;
 }
 
 .contact__wrapper {
   font-size: 12px;
 
   display: flex;
+
+  margin-top: 45px;
 }
 
 .contact__information-heading {
@@ -125,12 +146,21 @@ a {
 }
 
 .contact__information-paragraph {
+  letter-spacing: 0.1px;
+  line-height: 1.84;
   text-align: justify;
-  width: 295px;
+
+  width: 300px;
+
+  padding-top: 10px;
 }
 
 .contact__list {
+  line-height: 1.9;
+
   list-style: none;
+
+  padding-top: 20px;
 }
 
 .contact__link {
@@ -138,14 +168,14 @@ a {
 
   position: relative;
 
-  padding-left: 31px;
+  padding-left: 24px;
 }
 
 .contact__link-location::before {
   content: "";
 
   position: absolute;
-  left: 0;
+  left: 3px;
   top: 50%;
   transform: translateY(-50%);
 
@@ -183,14 +213,79 @@ a {
   background-image: url("assets/icon-mail.png");
 }
 
+.contact__information-heading {
+  line-height: 18px;
+}
+
+/*form*/
+
+.form__input {
+  font-size: 12px;
+
+  width: 619px;
+  height: 38px;
+
+  padding-left: 16px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #d6564f;
+}
+
+.form__input-email {
+  margin-top: 16px;
+}
+
+.form__input-subject {
+  margin-top: 16px;
+}
+
+.form__textarea {
+  font-family: inherit;
+  font-size: 12px;
+
+  width: 619px;
+  min-height: 202px;
+
+  margin-top: 16px;
+  margin-bottom: 62px;
+  padding-left: 16px;
+  padding-top: 10px;
+
+  resize: none;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #d6564f;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #f48c8f;
+  opacity: 1;
+}
+
 /*footer*/
 
 .footer__container {
+  min-height: 76px;
+
+  padding-left: 42px;
+
   background-color: #2d303a;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  color: #626984;
 }
 
 .footer__list {
   display: flex;
 
   list-style: none;
+}
+
+.footer__item + .footer__item {
+  margin-left: 8px;
 }
