@@ -254,10 +254,34 @@ a {
 
 .welcome__black-screen-horisontal {
   top: 194px;
-  left: 486px;
+  left: 487px;
 
   width: 333px;
   height: 188px;
+}
+
+.welcome__phone-button {
+  position: absolute;
+  z-index: 1;
+
+  width: 40px;
+  height: 40px;
+
+  background: none;
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+}
+
+.welcome__phone-button-vertical {
+  bottom: 92px;
+  left: 199px;
+}
+
+.welcome__phone-button-horisontal {
+  bottom: 48.77%;
+  left: 42.73%;
 }
 
 /*services*/
@@ -469,6 +493,10 @@ a {
 
 .portfolio__images-item {
   margin-bottom: 20px;
+}
+
+.portfolio__image-shadow {
+  border: solid 5px #F06C64;
 }
 
 /*about*/
