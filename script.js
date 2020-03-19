@@ -64,7 +64,7 @@ function turnOffScreenHorisontal() {
 }
 
 Page.BUTTON_PHONE_VERTICAL.addEventListener('click', turnOffScreenVertical);
-Page.BUTTON_PHONE_VERTICAL.addEventListener('click', turnOffScreenHorisontal);
+Page.BUTTON_PHONE_HORIZONTAL.addEventListener('click', turnOffScreenHorisontal);
 
 function random(min, max) {
   return Math.floor(min + Math.random() * (max + 1 - min));
