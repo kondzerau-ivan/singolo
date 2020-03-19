@@ -112,12 +112,12 @@ function onFormSubmit(evt) {
   evt.preventDefault();
   var message = 'Письмо отправлено';
   if (Page.FORM_SUBJECT.value !== '') {
-    message += '\n' + Page.FORM_SUBJECT.value;
+    message += '\n' + 'Тема: ' + Page.FORM_SUBJECT.value;
   } else {
     message += '\nБез темы';
   }
   if (Page.FORM_TEXTAREA.value !== '') {
-    message += '\n' + Page.FORM_TEXTAREA.value;
+    message += '\n' + 'Описание: ' + Page.FORM_TEXTAREA.value;
   } else {
     message += '\nБез описания';
   }
