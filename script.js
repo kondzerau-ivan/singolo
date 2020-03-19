@@ -116,7 +116,7 @@ function onFormSubmit(evt) {
   } else {
     message += '\nБез темы';
   }
-  if (!Page.FORM_TEXTAREA.value !== '') {
+  if (Page.FORM_TEXTAREA.value !== '') {
     message += '\n' + Page.FORM_TEXTAREA.value;
   } else {
     message += '\nБез описания';
