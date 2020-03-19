@@ -1,34 +1,57 @@
 "use strict";
 
-var links = document.querySelectorAll('.header__link');
-var arrows = document.querySelectorAll('.welcome__arrow');
-var screens = document.querySelectorAll('.welcome__black-screen');
-var radioButtons = document.querySelectorAll('.portfolio__radio-label');
-var buttonVerticalPhone = document.querySelector('.welcome__phone-button-vertical');
-var buttonHorisontalPhone = document.querySelector('.welcome__phone-button-horisontal');
-var fragment = document.createDocumentFragment();
-var portfolioImagesItems = [...document.querySelectorAll('.portfolio__images-item')];
-var portfolioImagesList = document.querySelector('.portfolio__images-list');
-var portfolioImages = [...document.querySelectorAll('.portfolio__image')];
+var fragment = document.createDocumentFragment(),
+  Page = {
+    LINKS: document.querySelectorAll('.header__link'),
+    SECTIONS: document.querySelectorAll('section'),
+    ARROWS: document.querySelectorAll('.welcome__arrow'),
+    RADIO_BUTTONS: document.querySelectorAll('.portfolio__radio-label'),
+    BUTTON_PHONE_VERTICAL: document.querySelector('.welcome__phone-button-vertical'),
+    BUTTON_PHONE_HORIZONTAL: document.querySelector('.welcome__phone-button-horisontal'),
+    PORTFOLIO_IMAGES_ITEMS: Array.from(document.querySelectorAll('.portfolio__images-item')),
+    PORTFOLIO_IMAGES_LIST: document.querySelector('.portfolio__images-list'),
+    PORTFOLIO_IMAGES: Array.from(document.querySelectorAll('.portfolio__image')),
+    FORM: document.querySelector('.form'),
+    FORM_BUTTON: document.querySelector('.form__button'),
+    FORM_SUBJECT: document.querySelector('.form__input-subject'),
+    FORM_TEXTAREA: document.querySelector('.form__textarea')
+  };
+
+document.addEventListener('scroll', onScroll);
+
+function onScroll() {
+  var curPos = window.scrollY;
+
+  Page.SECTIONS.forEach(element => {
+    if (element.offsetTop <= (curPos + element.offsetHeight * 0.3) && (element.offsetTop + element.offsetHeight) > curPos) {
+      Page.LINKS.forEach(a => {
+        a.classList.remove('header__link--active');
+        if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
+          a.classList.add('header__link--active');
+        }
+      });
+    }
+  });
+}
 
 function toggleLinkActive() {
-  for (var j = 0; j < links.length; j++) {
-    links[j].classList.remove('header__link--active');
-    this.classList.add("header__link--active");
-  }
+  Page.LINKS.forEach(element => {
+    element.classList.remove('header__link--active');
+    this.classList.add('header__link--active');
+  });
 }
 
-for (var j = 0; j < links.length; j++) {
-  links[j].addEventListener('click', toggleLinkActive);
-}
+Page.LINKS.forEach(element => {
+  element.addEventListener('click', toggleLinkActive);
+});
 
 function changeSlide() {
   document.querySelector('.welcome__slide').classList.toggle('visibility-hidden');
 }
 
-for (var i = 0; i < arrows.length; i++) {
-  arrows[i].addEventListener('click', changeSlide);
-}
+Page.ARROWS.forEach(element => {
+  element.addEventListener('click', changeSlide);
+});
 
 function turnOffScreenVertical() {
   document.querySelector('.welcome__black-screen-vertical')
@@ -40,8 +63,8 @@ function turnOffScreenHorisontal() {
     .classList.toggle('transparent');
 }
 
-buttonVerticalPhone.addEventListener('click', turnOffScreenVertical);
-buttonHorisontalPhone.addEventListener('click', turnOffScreenHorisontal);
+Page.BUTTON_PHONE_VERTICAL.addEventListener('click', turnOffScreenVertical);
+Page.BUTTON_PHONE_VERTICAL.addEventListener('click', turnOffScreenHorisontal);
 
 function random(min, max) {
   return Math.floor(min + Math.random() * (max + 1 - min));
@@ -57,30 +80,49 @@ function shuffle(array) {
 }
 
 function onRadioButtonsClick() {
+  var imagesItems = shuffle(Page.PORTFOLIO_IMAGES_ITEMS);
   // fill fragment
-  var imagesItems = shuffle(portfolioImagesItems);
-  for (var y = 0; y < imagesItems.length; y++) {
-    fragment.appendChild(imagesItems[y]);
-  }
+  imagesItems.forEach(element => {
+    fragment.appendChild(element);
+  });
   // delete old elements from list
-  while (portfolioImagesList.firstChild) {
-    portfolioImagesList.removeChild(portfolioImagesList.firstChild);
+  while (Page.PORTFOLIO_IMAGES_LIST.firstChild) {
+    Page.PORTFOLIO_IMAGES_LIST.removeChild(Page.PORTFOLIO_IMAGES_LIST.firstChild);
   }
   // fill list from fragment
-  portfolioImagesList.appendChild(fragment);
+  Page.PORTFOLIO_IMAGES_LIST.appendChild(fragment);
 }
 
-for (var u = 0; u < radioButtons.length; u++) {
-  radioButtons[u].addEventListener('click', onRadioButtonsClick);
-}
+Page.RADIO_BUTTONS.forEach(element => {
+  element.addEventListener('click', onRadioButtonsClick);
+});
 
 function onImageClick() {
-  portfolioImages.forEach(element => {
+  Page.PORTFOLIO_IMAGES.forEach(element => {
     element.classList.remove('portfolio__image-shadow');
     this.classList.add('portfolio__image-shadow');
   });
 }
 
-portfolioImages.forEach(element => {
+Page.PORTFOLIO_IMAGES.forEach(element => {
   element.addEventListener('click', onImageClick)
 });
+
+function onFormSubmit(evt) {
+  evt.preventDefault();
+  var message = 'Письмо отправлено';
+  if (Page.FORM_SUBJECT.value !== '') {
+    message += '\n' + Page.FORM_SUBJECT.value;
+  } else {
+    message += '\nБез темы';
+  }
+  if (!Page.FORM_TEXTAREA.value !== '') {
+    message += '\n' + Page.FORM_TEXTAREA.value;
+  } else {
+    message += '\nБез описания';
+  }
+  alert(message);
+  Page.FORM.reset();
+};
+
+Page.FORM.addEventListener('submit', onFormSubmit);

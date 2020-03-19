@@ -50,6 +50,8 @@ body {
   font-weight: 300;
   line-height: 30px;
   color: #767e9e;
+
+  scroll-behavior: smooth;
 }
 
 img {
@@ -254,7 +256,7 @@ a {
 
 .welcome__black-screen-horisontal {
   top: 194px;
-  left: 487px;
+  left: 47.7%;
 
   width: 333px;
   height: 188px;
