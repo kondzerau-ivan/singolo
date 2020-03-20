@@ -44,14 +44,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 30px;
   color: #767e9e;
-
-  scroll-behavior: smooth;
 }
 
 img {
