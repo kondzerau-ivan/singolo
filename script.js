@@ -23,7 +23,7 @@ function onScroll() {
   let curPos = window.scrollY;
 
   Page.SECTIONS.forEach(element => {
-    if (element.offsetTop <= (curPos + element.offsetHeight * 0.3) && (element.offsetTop + element.offsetHeight) > curPos) {
+    if (element.offsetTop <= (curPos + element.offsetHeight) && (element.offsetTop + element.offsetHeight) > curPos) {
       Page.LINKS.forEach(a => {
         a.classList.remove('header__link--active');
         if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
@@ -110,7 +110,9 @@ Page.PORTFOLIO_IMAGES.forEach(element => {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+
   let message = 'Письмо отправлено';
+
   if (Page.FORM_SUBJECT.value !== '') {
     message += '\n' + 'Тема: ' + Page.FORM_SUBJECT.value;
   } else {
@@ -121,6 +123,7 @@ function onFormSubmit(evt) {
   } else {
     message += '\nБез описания';
   }
+
   alert(message);
   Page.FORM.reset();
 };
