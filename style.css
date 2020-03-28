@@ -230,15 +230,15 @@ a {
 
 .welcome__black-screen-vertical {
   top: 121px;
-  left: 132px;
+  left: 125px;
 
-  width: 189px;
+  width: 190px;
   height: 333px;
 }
 
 .welcome__black-screen-horisontal {
   top: 191px;
-  left: 490px;
+  left: 487px;
 
   width: 333px;
   height: 188px;
@@ -767,12 +767,12 @@ a {
 
   .welcome__phone-button-vertical {
     bottom: 62px;
-    left: 155px;
+    left: 149px;
   }
 
   .welcome__phone-button-horisontal {
     bottom: 213px;
-    left: 324px;
+    left: 320px;
   }
 
   .welcome__image-vertical {
@@ -787,15 +787,15 @@ a {
 
   .welcome__black-screen-vertical {
     top: 90px;
-    left: 104px;
-    width: 143px;
+    left: 96px;
+    width: 145px;
     height: 251px;
   }
 
   .welcome__black-screen-horisontal {
     top: 142px;
-    left: 367px;
-    width: 251px;
+    left: 363px;
+    width: 253px;
     height: 143px;
   }
 
@@ -873,13 +873,18 @@ a {
 
 @media (max-width: 768px) {
   .container {
-    width: 100%;
+    width: 375px;
+
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   /*header*/
 
   .header__container {
     justify-content: center;
+
+    border: none;
   }
 
   .header__humburger {
@@ -902,27 +907,225 @@ a {
 
   .welcome__container {
     min-height: 220.59px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: none;
   }
 
   .welcome__image-vertical {
-    width: 24%;
+    width: 88.3px;
     height: auto;
   }
-  
+
   .welcome__image-horizontal {
-    width: 47%;
+    width: 177.84px;
     height: auto;
+  }
+
+  .welcome__phone-button-vertical {
+    top: 169px;
+    left: 68px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .welcome__phone-button-horisontal {
+    top: 96px;
+    left: 160px;
+    width: 20px;
+    height: 20px;
   }
 
   .welcome__black-screen-vertical {
-    width: 14.5%;
-    height: 44%;
-    top: 26.7%;
-    left: 21.8%;
+    top: 45px;
+    left: 43px;
+    width: 70px;
+    height: 123px;
   }
 
   .welcome__black-screen-horisontal {
-    height: 14.5%;
-    width: 44%;
+    top: 70px;
+    left: 181px;
+    height: 70px;
+    width: 123px;
+  }
+
+  /*services*/
+
+  .services__container {
+    padding-top: 26px;
+
+    border: none;
+  }
+
+  .services__paragraph {
+    text-align: left;
+
+    width: 100%;
+  }
+
+  .services__list {
+    padding-top: 25px;
+
+    margin-bottom: 0;
+  }
+
+  /*advantage*/
+
+  .advantage:last-child {
+    margin-bottom: 15px;
+  }
+
+  /*portfolio*/
+
+  .portfolio__container {
+    border: none;
+  }
+
+  .portfolio__paragraph {
+    text-align: left;
+
+    width: 100%;
+  }
+
+  .portfolio__images-list {
+    width: 315px;
+    max-height: 554px;
+    margin: 0 auto;
+
+    margin-bottom: 42px;
+  }
+
+  .portfolio__images-item {
+    margin-bottom: 13px;
+  }
+
+  .portfolio__image {
+    width: 151px;
+  }
+
+  /*about*/
+
+  .about__container {
+    padding-top: 33px;
+
+    border: none;
+  }
+
+  .about__paragraph {
+    text-align: left;
+    width: 100%;
+  }
+
+  .about__list {
+    flex-direction: column;
+  }
+
+  /*card*/
+
+  .card {
+    width: 100%;
+  }
+
+  .card__list {
+    margin-bottom: 34px;
+  }
+
+  /*contact*/
+  .contact__container {
+    border: none;
+  }
+
+  .contact__wrapper {
+    flex-direction: column;
+  }
+
+  .contact__information-paragraph {
+    width: 100%;
+  }
+
+  .information-wrapper {
+    padding-top: 32px;
+  }
+
+  .contact__information-paragraph {
+    padding-top: 5px;
+  }
+
+  .contact__list {
+    padding-top: 10px;
+
+    margin-bottom: 42px;
+  }
+
+  /*form*/
+
+  .form__input,
+  .form__textarea {
+    width: 100%;
+  }
+
+  .form__textarea {
+    margin-bottom: 10px;
+  }
+
+  .form__button {
+    position: static;
+
+    line-height: 0;
+
+    width: 100%;
+  }
+
+  /*footer*/
+
+  .footer__container {
+    justify-content: center;
+  }
+
+  .footer__copyright {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 100%;
+  }
+
+  /*advantage*/
+
+  .advantage__paragraph {
+    width: 100%;
+  }
+
+  /*portfolio*/
+
+  .portfolio__paragraph {
+    width: 100%;
+  }
+  .portfolio__radio-list {
+    flex-wrap: wrap;
+  }
+
+  .portfolio__images-list {
+    width: 100%;
+    max-height: 460px;
+  }
+
+  .portfolio__images-item {
+    width: 48%;
+  }
+
+  .portfolio__image {
+    width: 100%;
+  }
+
+  /*about*/
+
+  .about__paragraph {
+    width: 100%;
   }
 }

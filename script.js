@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const Page = {
         LINKS: document.querySelectorAll('.header__link'),
@@ -23,7 +23,7 @@ function onScroll() {
   let curPos = window.scrollY;
 
   Page.SECTIONS.forEach(element => {
-    if (element.offsetTop <= (curPos + element.offsetHeight) && (element.offsetTop + element.offsetHeight) > curPos) {
+    if (element.offsetTop <= (curPos + element.offsetHeight * 0.3) && (element.offsetTop + element.offsetHeight) > curPos) {
       Page.LINKS.forEach(a => {
         a.classList.remove('header__link--active');
         if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
