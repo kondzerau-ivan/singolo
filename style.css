@@ -1135,6 +1135,23 @@ a {
     min-height: 100%;
   }
 
+  .welcome__phone-button-vertical {
+    left: 53px;
+    top: 165px;
+  }
+
+  .welcome__phone-button-horisontal {
+    left: 130px;
+  }
+
+  .welcome__black-screen-vertical {
+    left: 27px;
+  }
+
+  .welcome__black-screen-horisontal {
+    left: 147px;
+  }
+
   /*advantage*/
 
   .advantage__paragraph {
